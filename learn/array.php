@@ -85,7 +85,7 @@ var_dump(in_array("ホノルル", $ary1, true));
  var_dump(array_key_exists(0, $zip_shibuya)); // index番号もキーとして認識される
 
   print_r(array_keys($zip_shibuya));
-  print_r(array_keys($zip_shibuya, "150-0013")); // その値のキーは何かを出力
+  print_r(array_keys($zip_shibuya, "150-0013")[0]); // その値のキーは何かを出力
 ?>
 </pre>
 
