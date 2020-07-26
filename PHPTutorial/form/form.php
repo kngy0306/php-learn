@@ -14,6 +14,18 @@
       <input type="text" name="title">
       <p>ブログ本文</p>
       <textarea name="content" id="content" cols="30" rows="10"></textarea>
+      <br>
+      <p>投稿日 : </p>
+      <input type="date" name="post_at">
+      <br>
+      <select name="category">
+          <option value="日常">日常</option>
+          <option value="プログラミング">プログラミング</option>
+      </select>
+      <br>
+      <input type="radio" name="publish_status" value="publish">公開
+      <input type="radio" name="publish_status" value="un_publish">非公開
+      <br>
       <input type="submit" value="送信">
   </form>
 </body>
