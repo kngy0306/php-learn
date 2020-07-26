@@ -1,0 +1,9 @@
+UserTable定義
+テーブル名 : users 文字コード : utf8mb4  絵文字の使用のため
+
+id       int(unsigned) 11  AI  // auto increment
+name     varchar       64
+email    varchar       191 unique
+password varchar       191
+
+passwd : konapasswd1234
