@@ -8,7 +8,16 @@ try{
   $dbh = new PDO($dsn,$user,$pass,[
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, // error表示するためのモード
   ]);
-  echo '接続成功';
+  // echo '接続成功';
+
+  // ①sqlの準備
+  $sql = 'SELECT * FROM blog';
+  // ②sqlの実行
+  $stmt = $dbh->query($sql);
+  // ③sqlの結果を受け取る
+  $result = $stmt->fetchall(PDO::FETCH_ASSOC);
+
+  //dbの終了
   $dbh = null;
 }catch(PDOException $e){
   echo '接続失敗'. $e->getMessage();
@@ -16,3 +25,32 @@ try{
 };
 
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>blog一覧</title>
+</head>
+
+<body>
+  <h2>ブログ一覧</h2>
+  <table>
+    <tr>
+      <th>No</th>
+      <th>タイトル</th>
+      <th>カテゴリ</th>
+    </tr>
+    <?php foreach($result as $column): ?>
+    <tr>
+      <td><?php echo $column['id'] ?></td>
+      <td><?php echo $column['title'] ?></td>
+      <td><?php echo $column['category'] ?></td>
+    </tr>
+    <?php endforeach; ?>
+  </table>
+</body>
+
+</html>
