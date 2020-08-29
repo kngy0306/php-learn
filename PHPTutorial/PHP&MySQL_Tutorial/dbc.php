@@ -80,7 +80,7 @@ function setCategoryName($category)
     <tr>
       <td><?php echo $column['id'] ?></td>
       <td><?php echo $column['title'] ?></td>
-      <td><?php echo setCategoryName(['category']) ?></td>
+      <td><?php echo setCategoryName($column['category']) ?></td>
     </tr>
     <?php endforeach; ?>
   </table>
