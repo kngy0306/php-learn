@@ -1,5 +1,4 @@
 <?php
-
 // 関数1つに1つの機能のみを持たせる -> testや管理のしやすさから
 // 1. データベース接続
 // 2. データ取得
@@ -41,8 +40,6 @@ function getAllBlog()
   $dbh = null;
 }
 
-$blogData = getAllBlog();
-
 // 3. カテゴリ名を表示
 // 引数 : 数字
 // 返り値 : カテゴリ名
@@ -57,34 +54,27 @@ function setCategoryName($category)
   }
 }
 
-?>
+// 引数 $id
+// 返り値 $result
+function getBlog($id)
+{
+  if (empty($id)) {
+    exit('IDが不正です');
+  }
 
-<!DOCTYPE html>
-<html lang="en">
+  $dbh = dbConnect();
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>blog一覧</title>
-</head>
+  // SQL準備
+  $stmt = $dbh->prepare('SELECT * FROM blog Where id = :id'); // :idがプレースホルダ
+  $stmt->bindValue(':id', (int)$id, PDO::PARAM_INT);
 
-<body>
-  <h2>ブログ一覧</h2>
-  <table>
-    <tr>
-      <th>No</th>
-      <th>タイトル</th>
-      <th>カテゴリ</th>
-    </tr>
-    <?php foreach ($blogData as $column) : ?>
-    <tr>
-      <td><?php echo $column['id'] ?></td>
-      <td><?php echo $column['title'] ?></td>
-      <td><?php echo setCategoryName($column['category']) ?></td>
-      <td><a href="./detail.php?id=<?php echo $column['id'] ?>">詳細</a></td>
-    </tr>
-    <?php endforeach; ?>
-  </table>
-</body>
+  // SQL実行
+  $stmt->execute();
 
-</html>
+  $result = $stmt->fetch(PDO::FETCH_ASSOC);
+  if (!$result) {
+    exit('ブログがありません');
+  }
+
+  return $result;
+}
