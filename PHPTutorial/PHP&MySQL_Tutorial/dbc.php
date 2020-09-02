@@ -1,5 +1,4 @@
 <?php
-
 class Dbc
 {
   protected $table_name;
