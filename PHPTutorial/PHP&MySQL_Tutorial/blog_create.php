@@ -1,5 +1,5 @@
 <?php
-require_once('dbc.php');
+require_once('blog.php');
 
 $blogs = $_POST;
 
@@ -22,5 +22,5 @@ if (empty($blogs['publish_status'])) {
   exit('公開、非公開を選択してください');
 }
 
-$dbc = new Dbc();
-$dbc->blogCreate($blogs);
+$blog = new Blog();
+$blog->blogCreate($blogs);

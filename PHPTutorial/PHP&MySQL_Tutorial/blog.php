@@ -1,29 +1,44 @@
 <?php
-$blog = $_POST;
+require_once('dbc.php');
 
-if ($blog['publish_status'] === 'un_publish') {
-    echo '記事がありません。';
-    return;
+class Blog extends Dbc
+{
+  protected $table_name = 'blog';
+
+  public function setCategoryName($category)
+  {
+    if ($category === '1') {
+      return '日常';
+    } elseif ($category === '2') {
+      return 'プログラミング';
+    } else {
+      return 'その他';
+    }
+  }
+
+  public function blogCreate($blogs)
+  {
+    $sql = 'INSERT INTO 
+          blog(title, content, category, publish_status)
+        VALUES
+          (:title, :content, :category, :publish_status)';
+
+    $dbh = $this->dbConnect();
+    $dbh->beginTransaction();
+
+    try {
+      $stmt = $dbh->prepare($sql);
+      $stmt->bindValue(':title', $blogs['title'], PDO::PARAM_STR);
+      $stmt->bindValue(':content', $blogs['content'], PDO::PARAM_STR);
+      $stmt->bindValue(':category', $blogs['category'], PDO::PARAM_INT);
+      $stmt->bindValue(':publish_status', $blogs['publish_status'], PDO::PARAM_INT);
+      $stmt->execute();
+      $dbh->commit();
+
+      echo '投稿が完了しました！';
+    } catch (PDOException $e) {
+      exit($e);
+      $dbh->rollBack();
+    }
+  }
 }
-?>
-<!doctype html>
-<html lang="ja">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport"
-    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>プログ</title>
-</head>
-
-<body>
-
-  <h2><?php echo htmlspecialchars($blog['title'], ENT_QUOTES, 'UTF-8'); ?></h2>
-  <p>投稿日 : <?php echo htmlspecialchars($blog['post_at'], ENT_QUOTES, 'UTF-8'); ?></p>
-  <p>カテゴリ : <?php echo htmlspecialchars($blog['category'], ENT_QUOTES, 'UTF-8'); ?></p>
-  <hr>
-  <p><?php echo nl2br(htmlspecialchars($blog['content'], ENT_QUOTES, 'UTF-8')); ?></p>
-</body>
-
-</html>
