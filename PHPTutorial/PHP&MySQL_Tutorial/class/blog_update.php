@@ -8,4 +8,4 @@ $blog->blogValidate($blogs);
 $blog->blogUpdate($blogs);
 ?>
 
-<p><a href="./index.php">戻る</a></p>
+<p><a href="../font/index.php">戻る</a></p>

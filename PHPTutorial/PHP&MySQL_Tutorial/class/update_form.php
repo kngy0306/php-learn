@@ -43,7 +43,7 @@ $publish_status = $result['publish_status'];
   </form>
   ?>
 
-  <p><a href="./index.php">戻る</a></p>
+  <p><a href="../front/index.php">戻る</a></p>
 </body>
 
 </html>

@@ -23,7 +23,7 @@ $result = $blog->getById($_GET['id']);
   <hr>
   <p>本文 : <?php echo $result['content'] ?></p>
 
-  <p><a href="./index.php">戻る</a></p>
+  <p><a href="../front/index.php">戻る</a></p>
 </body>
 
 </html>

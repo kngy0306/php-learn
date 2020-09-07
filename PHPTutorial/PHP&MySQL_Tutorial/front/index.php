@@ -1,5 +1,5 @@
 <?php
-require_once('blog.php');
+require_once('../class/blog.php');
 
 $blog = new Blog();
 $blogData = $blog->getAll();
@@ -33,9 +33,9 @@ function h($s)
       <td><?php echo h($column['title']) ?></td>
       <td><?php echo h($blog->setCategoryName($column['category'])) ?></td>
       <td><?php echo h($column['post_at']) ?></td>
-      <td><a href="./detail.php?id=<?php echo $column['id'] ?>">詳細</a></td>
-      <td><a href="./update_form.php?id=<?php echo $column['id'] ?>">編集</a></td>
-      <td><a href="./blog_delete.php?id=<?php echo $column['id'] ?>">削除</a></td>
+      <td><a href="../class/detail.php?id=<?php echo $column['id'] ?>">詳細</a></td>
+      <td><a href="../class/update_form.php?id=<?php echo $column['id'] ?>">編集</a></td>
+      <td><a href="../class/blog_delete.php?id=<?php echo $column['id'] ?>">削除</a></td>
     </tr>
     <?php endforeach; ?>
   </table>

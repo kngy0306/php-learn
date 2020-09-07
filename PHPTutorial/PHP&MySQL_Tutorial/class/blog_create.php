@@ -8,4 +8,4 @@ $blog->blogValidate($blogs);
 $blog->blogCreate($blogs);
 ?>
 
-<p><a href="./index.php">戻る</a></p>
+<p><a href="../front/index.php">戻る</a></p>
