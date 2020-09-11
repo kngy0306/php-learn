@@ -20,11 +20,11 @@
     </p>
     <p>
       <label for="passwd">パスワード: </label>
-      <input type="text" name="passwd">
+      <input type="password" name="passwd">
     </p>
     <p>
       <label for="pass_check">パスワード確認: </label>
-      <input type="text" name="pass_check">
+      <input type="password" name="pass_check">
     </p>
     <p><input type="submit" value="新規登録"></p>
   </form>
