@@ -1,9 +1,18 @@
 <?php
-
+session_start();
 require_once('../classes/UserLogic.php');
 
 // error array
 $err = [];
+
+// unsetでトークンが消えているので複数回送信ができなくなる
+// signup_form以外からのアクセスは通さない
+$token = filter_input(INPUT_POST, 'csrf_token');
+if (!isset($_SESSION['csrf_token']) || $token !== $_SESSION['csrf_token']) {
+  exit("不正なリクエスト");
+}
+unset($_SESSION['csrf_token']);
+
 
 // validation
 if (!$username = filter_input(INPUT_POST, 'username')) {
@@ -42,11 +51,11 @@ if (count($err) === 0) {
 
 <body>
   <?php if (count($err) > 0) : ?>
-  <?php foreach ($err as $e) : ?>
-  <p><?php echo $e ?></p>
-  <?php endforeach ?>
+    <?php foreach ($err as $e) : ?>
+      <p><?php echo $e ?></p>
+    <?php endforeach ?>
   <?php else : ?>
-  <p>登録完了しました。</p>
+    <p>登録完了しました。</p>
   <?php endif ?>
   <a href="./signup_form.php">戻る</a>
 
