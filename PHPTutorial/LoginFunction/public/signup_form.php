@@ -4,7 +4,7 @@ require_once('../functions.php');
 require_once('../classes/UserLogic.php');
 
 $result = UserLogic::checkLogin();
-if($result){
+if ($result) {
   header('Location: mypage.php');
   return;
 }
@@ -48,6 +48,7 @@ unset($_SESSION['login_err']);
     <input type="hidden" name="csrf_token" value="<?php echo h(setToken()); ?>">
 
     <p><input type="submit" value="新規登録"></p>
+    <a href="login_form.php">ログインする</a>
   </form>
 </body>
 
