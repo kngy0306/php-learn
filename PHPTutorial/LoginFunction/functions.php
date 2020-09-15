@@ -21,7 +21,6 @@ function setToken()
   // フォームからトークンを送信
   // 送信後の画面でトークンを照会
   // トークンの削除
-  session_start();
   $csrf_token = bin2hex(random_bytes(32));
   $_SESSION['csrf_token'] = $csrf_token;
   return $csrf_token;

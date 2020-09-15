@@ -1,11 +1,31 @@
 <?php
 session_start();
-$err = $_SESSION;
+require_once('../classes/UserLogic.php');
 
-// SESSIONファイルの中身を削除
-// セッションに登録されたデータを全て破棄する
-$_SESSION = array();
-session_destroy();
+// error array
+$err = [];
+
+// validation
+if (!$email = filter_input(INPUT_POST, 'email')) {
+  $err['email'] = 'メールアドレスを記入してください';
+}
+if (!$passwd = filter_input(INPUT_POST, 'passwd')) {
+  $err['passwd'] = 'パスワードを記入してください';
+}
+
+if (count($err) > 0) {
+  $_SESSION = $err;
+  header('Location: login_form.php');
+  return;
+}
+
+$result = UserLogic::login($email, $passwd);
+// ログイン失敗処理
+if (!$result) {
+  header('Location: login_form.php');
+  return;
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,38 +33,14 @@ session_destroy();
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    .error {
-      color: red;
-    }
-  </style>
-  <title>ログイン画面</title>
+  <title>ログイン完了</title>
 </head>
 
 <body>
-  <h2>ログインフォーム</h2>
-  <p>kona@test2.com qwer1234</p>
-  <?php if (isset($err['msg'])) : ?>
-    <p class="error"><?php echo $err['msg']; ?></p>
-  <?php endif; ?>
-  <form action="top.php" method="POST">
-    <p>
-      <label for="email">メールアドレス: </label>
-      <input type="text" name="email">
-    </p>
-    <?php if (isset($err['email'])) : ?>
-      <p class="error"><?php echo $err['email']; ?></p>
-    <?php endif; ?>
-    <p>
-      <label for="passwd">パスワード: </label>
-      <input type="password" name="passwd">
-    </p>
-    <?php if (isset($err['email'])) : ?>
-      <p class="error"><?php echo $err['email']; ?></p>
-    <?php endif; ?>
-    <p><input type="submit" value="ログイン"></p>
-  </form>
-  <a href="signup_form.php">新規登録はこちら</a>
+  <h2>ログイン完了</h2>
+  <p>ログインしました。</p>
+  <a href="./mypage.php">マイページへ</a>
+
 </body>
 
 </html>
