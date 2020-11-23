@@ -10,7 +10,7 @@ require_once dirname(__FILE__) . '/vendor/autoload.php';
 // require_once dirname(__FILE__) . '/library/map/pin/GenericPin.php';
 // require_once dirname(__FILE__) . '/library/map/Map.php';
 // ↓
-require_once(__FILE__) . '/vendor/autoload.php';
+require_once dirname(__FILE__) . '/vendor/autoload.php';
 
 use MyApplication\Map\Image\SatelliteMapImage;
 use MyApplication\Map\Pin\GenericPin;

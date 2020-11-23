@@ -10,7 +10,7 @@
 <?php
     require_once dirname(__FILE__) . '/../../vendor/autoload.php';
     $goutteClient = new Goutte\Client();
-    $crawler = $goutteClient->request('GET', 'http://localhost/honkaku/chapter10/goutte/blog-entries.html');
+    $crawler = $goutteClient->request('GET', 'http://localhost/codeFolder/honkaku/chapter10/goutte/blog-entries.html');
 
     /*
      * 1番目のイベントタイトルである「12/1(土)開催！フィールドアスレチック公園であそぼう」を出力する例

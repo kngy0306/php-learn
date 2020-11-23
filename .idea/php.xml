@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PhpIncludePathManager">
+    <include_path>
+      <path value="$PROJECT_DIR$/honkaku/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/honkaku/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/honkaku/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/honkaku/vendor/markbaker/matrix" />
+      <path value="$PROJECT_DIR$/honkaku/vendor/markbaker/complex" />
+      <path value="$PROJECT_DIR$/honkaku/vendor/fabpot/goutte" />
+      <path value="$PROJECT_DIR$/honkaku/vendor/myclabs/php-enum" />
+      <path value="$PROJECT_DIR$/honkaku/vendor/maennchen/zipstream-php" />
+      <path value="$PROJECT_DIR$/honkaku/vendor/composer" />
+      <path value="$PROJECT_DIR$/honkaku/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/honkaku/vendor/psr/http-client" />
+      <path value="$PROJECT_DIR$/honkaku/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/honkaku/vendor/psr/http-factory" />
+      <path value="$PROJECT_DIR$/honkaku/vendor/symfony/css-selector" />
+      <path value="$PROJECT_DIR$/honkaku/vendor/phpoffice/phpspreadsheet" />
+      <path value="$PROJECT_DIR$/honkaku/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/honkaku/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/honkaku/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/honkaku/vendor/symfony/polyfill-intl-idn" />
+      <path value="$PROJECT_DIR$/honkaku/vendor/symfony/browser-kit" />
+      <path value="$PROJECT_DIR$/honkaku/vendor/symfony/dom-crawler" />
+      <path value="$PROJECT_DIR$/honkaku/vendor/symfony/polyfill-php72" />
+      <path value="$PROJECT_DIR$/honkaku/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/honkaku/vendor/ralouphie/getallheaders" />
+    </include_path>
+  </component>
+</project>

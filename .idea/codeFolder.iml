@@ -1,7 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="WEB_MODULE" version="4">
   <component name="NewModuleRootManager">
-    <content url="file://$MODULE_DIR$" />
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/honkaku/vendor/composer" />
+      <excludeFolder url="file://$MODULE_DIR$/honkaku/vendor/fabpot/goutte" />
+      <excludeFolder url="file://$MODULE_DIR$/honkaku/vendor/guzzlehttp/guzzle" />
+      <excludeFolder url="file://$MODULE_DIR$/honkaku/vendor/guzzlehttp/promises" />
+      <excludeFolder url="file://$MODULE_DIR$/honkaku/vendor/guzzlehttp/psr7" />
+      <excludeFolder url="file://$MODULE_DIR$/honkaku/vendor/maennchen/zipstream-php" />
+      <excludeFolder url="file://$MODULE_DIR$/honkaku/vendor/markbaker/complex" />
+      <excludeFolder url="file://$MODULE_DIR$/honkaku/vendor/markbaker/matrix" />
+      <excludeFolder url="file://$MODULE_DIR$/honkaku/vendor/myclabs/php-enum" />
+      <excludeFolder url="file://$MODULE_DIR$/honkaku/vendor/phpoffice/phpspreadsheet" />
+      <excludeFolder url="file://$MODULE_DIR$/honkaku/vendor/psr/http-client" />
+      <excludeFolder url="file://$MODULE_DIR$/honkaku/vendor/psr/http-factory" />
+      <excludeFolder url="file://$MODULE_DIR$/honkaku/vendor/psr/http-message" />
+      <excludeFolder url="file://$MODULE_DIR$/honkaku/vendor/psr/simple-cache" />
+      <excludeFolder url="file://$MODULE_DIR$/honkaku/vendor/ralouphie/getallheaders" />
+      <excludeFolder url="file://$MODULE_DIR$/honkaku/vendor/symfony/browser-kit" />
+      <excludeFolder url="file://$MODULE_DIR$/honkaku/vendor/symfony/css-selector" />
+      <excludeFolder url="file://$MODULE_DIR$/honkaku/vendor/symfony/dom-crawler" />
+      <excludeFolder url="file://$MODULE_DIR$/honkaku/vendor/symfony/polyfill-ctype" />
+      <excludeFolder url="file://$MODULE_DIR$/honkaku/vendor/symfony/polyfill-intl-idn" />
+      <excludeFolder url="file://$MODULE_DIR$/honkaku/vendor/symfony/polyfill-intl-normalizer" />
+      <excludeFolder url="file://$MODULE_DIR$/honkaku/vendor/symfony/polyfill-mbstring" />
+      <excludeFolder url="file://$MODULE_DIR$/honkaku/vendor/symfony/polyfill-php72" />
+      <excludeFolder url="file://$MODULE_DIR$/honkaku/vendor/symfony/polyfill-php80" />
+    </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>

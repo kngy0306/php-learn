@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 /**
@@ -26,7 +27,7 @@ class SomeClass
             'age'  => 29,
             'pref' => 'Tokyo',
             'name' => 'Tanaka' // nameキーが2回出ている
-        ]
+        ];
         $this->something1 = 'something1';
         $this->samuthing2 = 'something2'; // タイプミス
         $this->doConditional();
