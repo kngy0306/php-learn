@@ -69,6 +69,12 @@
 <body>
   <div id="map" style="height:500px">
   </div>
+
+  <script src="{{ asset("/js/result.js") }}"></script>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-cecoL_7fc5BuW6atH6y2l-FBj7SuJZA&callback=initMap&libraries=&v=weekly"
+    async>
+  </script>
 </body>
 
 </html>
