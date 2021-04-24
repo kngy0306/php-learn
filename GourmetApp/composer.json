@@ -1,0 +1,10 @@
+{
+    "name": "kona/gourmet-app",
+    "authors": [
+        {
+            "name": "Kona",
+            "email": "kitami.kitano20@gmail.com"
+        }
+    ],
+    "require": {}
+}
