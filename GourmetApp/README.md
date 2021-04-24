@@ -49,8 +49,10 @@ echo '<pre>';
 var_dump($res);
 echo '</pre>';
 curl_close($conn); //セッションの終了
-
 ```
+
+<img width="50%" alt="スクリーンショット 2021-04-24 13 26 09" src="https://user-images.githubusercontent.com/57553474/115949319-4a9fa100-a50f-11eb-8ec7-c9491d42192d.png">
+
 
 ### jsonのまま出力
 ```php
@@ -70,8 +72,12 @@ $url = $baseurl . "?" . http_build_query($params, "", "&");
 $result = file_get_contents($url);
 
 echo $result;
-
 ```
+
+
+<img width="50%" alt="スクリーンショット 2021-04-24 15 09 54" src="https://user-images.githubusercontent.com/57553474/115949333-6c008d00-a50f-11eb-91e8-5bb1a3eb00ea.png">
+
+
 
 #### 受け取ったjsonを配列に変換して出力
 ```php
@@ -80,5 +86,6 @@ echo $result;
 $res = json_decode($result, true);
 
 print_r($res["results"]["shop"][0]);
-
 ```
+
+<img width="50%" alt="スクリーンショット 2021-04-24 15 10 01" src="https://user-images.githubusercontent.com/57553474/115949344-7589f500-a50f-11eb-9b78-fc456b589c11.png">
