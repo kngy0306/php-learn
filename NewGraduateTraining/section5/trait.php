@@ -6,6 +6,10 @@ trait shibataTrait
   {
     echo 'プロダクト';
   }
+
+  public function getName(){
+      echo '柴田';
+  }
 }
 
 trait matsumuraTrait
