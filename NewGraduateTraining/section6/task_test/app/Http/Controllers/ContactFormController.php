@@ -7,6 +7,7 @@ use App\Services\CheckFormData;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Requests\StoreContactForm;
+use Illuminate\Support\Facades\Log;
 
 class ContactFormController extends Controller
 {
@@ -52,7 +53,6 @@ class ContactFormController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
      */
     public function create()
     {
@@ -78,6 +78,7 @@ class ContactFormController extends Controller
         $contact->contact = $request->input('contact');
 
         // dd($your_name);
+        Log::debug($contact->your_name);
 
         $contact->save();
 
